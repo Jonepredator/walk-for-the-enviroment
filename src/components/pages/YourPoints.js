@@ -3,21 +3,17 @@ import { FaCoins } from 'react-icons/fa';
 import GpLogo from '../assets/gp-logo.svg';
 import NsfLogo from '../assets/nsf-logo.svg';
 import WwfLogo from '../assets/wwf-logo.svg';
-
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 const InfoWrapper = styled.div`
    background-color: #251821;
-   /* margin: 0 auto; */
    display: flex;
    justify-content: center;
    align-items: center;
-   /* max-width: 768px; */
    height: 90vh;
    overflow: hidden;
    overflow-y: scroll;
-   /* border: 2px solid red; */
 `;
 
 const Container = styled.section`
@@ -25,7 +21,6 @@ const Container = styled.section`
    flex-direction: column;
    width: 100%;
    height: 100%;
-   /* border: 2px solid green; */
 `;
 
 const PageDisplay = styled.div`
@@ -36,8 +31,6 @@ const PageDisplay = styled.div`
    background-image: linear-gradient(to right, #ff1ab3, #c1298f, #882a6a, #542345, #251821);
    border-radius: 50px 0 0 50px;
    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
-   /* border: 2px solid magenta; */
-
    h2 {
       padding-left: 1rem;
       color: #FFF;
@@ -57,7 +50,6 @@ const MoneyPointsBox = styled.div`
    height: 70px;
    background: #EEEAED;
    border-radius: 50px;
-
    p {
       font-style: normal;
       font-weight: normal;
@@ -65,6 +57,7 @@ const MoneyPointsBox = styled.div`
       line-height: 2.25rem;
    }
 `;
+
 const CoinsIcon = styled(FaCoins)`
    color: #FF1AB3;
    width: 1.6rem;
@@ -81,7 +74,6 @@ const OrganisationBox = styled.div`
    background: #F6F6F6;
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
    border-radius: 50px;
-
    img {
       width: 200px;
       background: transparent;
@@ -90,7 +82,6 @@ const OrganisationBox = styled.div`
       background: transparent;
       right: 1.6rem;
    }
-   
 `;
 
 const Button = styled(NavLink)`
@@ -124,10 +115,9 @@ const YourPoints = () => {
                   <h2>Dina Poäng</h2>
                </PageDisplay>
 
-
                <MoneyPointsBox>
                   <CoinsIcon />
-                  <p>45 p = 45 kr</p>
+                  <p>24 p = 24 kr</p>
                </MoneyPointsBox>
 
                <OrganisationBox >
@@ -151,9 +141,6 @@ const YourPoints = () => {
                <Button to='wwf'>
                   <p>Välj</p>
                </Button>
-
-
-
 
             </Container>
          </InfoWrapper>

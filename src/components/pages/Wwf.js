@@ -9,7 +9,6 @@ const Container = styled.div`
    flex-direction: column;
    align-items: center;
    height: 90vh;
-   /* border: 2px solid red; */
 `;
 
 const OrganisationBox = styled.div`
@@ -23,7 +22,6 @@ const OrganisationBox = styled.div`
    background: #F6F6F6;
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
    border-radius: 50px;
-
    img {
       width: 200px;
       background: transparent;
@@ -35,11 +33,9 @@ const OrganisationBox = styled.div`
 `;
 
 const TextWrapper = styled.div`
-   /* border: 1px solid green; */
    display: flex;
    flex-direction: column;
    width: 80%;
-
    h4 {
       margin: 1rem 0 .2rem 0;
       color: #FFF;
@@ -64,7 +60,6 @@ const Button = styled(NavLink)`
    border-radius: 50px;
    margin: 1.5rem;
    text-decoration: none;
-   /* z-index: 20; */
    p {
       background: transparent;
       color: #F8F3F6;

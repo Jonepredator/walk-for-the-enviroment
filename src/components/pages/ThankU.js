@@ -3,6 +3,7 @@ import { BiDonateHeart } from 'react-icons/bi';
 import { MdNaturePeople } from 'react-icons/md';
 import Bg_img from '../assets/bg_darkmode.svg';
 import styled from 'styled-components';
+import Leaf from '../assets/leaf.svg';
 
 const Wrapper = styled.div`
    background-color: #251821;
@@ -15,13 +16,21 @@ const Wrapper = styled.div`
 
 const Header = styled.div`
    display: flex;
-   margin-top: 10vh;
-
+   flex-direction: column;
+   margin-top: 2vh;
    h1 {
       color: #FFF;
       font-style: normal;
       font-weight: 200;
       font-size: 3.2rem;
+   }
+   img {
+      align-items: flex-end;
+      height: 80px;
+      width: 80px;
+      position: relative;
+      right: -265px;
+      bottom: -40px;
    }
 `;
 
@@ -33,8 +42,7 @@ const InfoDisplay = styled.div`
    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
    border-radius: 50px;
    padding: 1.25rem;
-   z-index: 10;
-
+   z-index: 200;
    h2 {
       background-color: transparent;
       color: #FFF;
@@ -49,9 +57,6 @@ const InfoDisplay = styled.div`
       font-size: 1.5rem;
       font-weight: 500;
    }
-   h4 {
-
-   }
 `;
 
 const DonationSection = styled.section`
@@ -59,6 +64,7 @@ const DonationSection = styled.section`
    align-items: center;
    margin-top: .5rem;
    background: transparent;
+   z-index: 10;
    p {
       background: transparent;
       font-size: 2.25rem;
@@ -95,15 +101,15 @@ const EmissionIcon = styled(MdNaturePeople)`
 `;
 
 const BgWrapper = styled.div`
-   /* border: 1px solid red; */
    display: flex;
-   position: fixed;
+   position: relative;
    justify-content: center;
-   bottom: 10vh;
+   bottom: 20vh;
    width: 100%;
    z-index: 1;
    img {
       width: 700px;
+      z-index: 1;
    }
 `;
 
@@ -113,6 +119,7 @@ const ThankU = () => {
    return (
       <Wrapper>
          <Header>
+            <img src={Leaf} alt="leaf" />
             <h1>Gå för miljön</h1>
          </Header>
 
@@ -121,11 +128,11 @@ const ThankU = () => {
             <span>Alla hjältar bär inte<br />mantel.</span>
             <DonationSection>
                <DonationIcon />
-               <p>: 45kr</p>
+               <p>: 24kr</p>
             </DonationSection>
             <EmissionSection>
                <EmissionIcon />
-               <p>: -40kg CO2</p>
+               <p>: -4kg CO2</p>
             </EmissionSection>
          </InfoDisplay>
 

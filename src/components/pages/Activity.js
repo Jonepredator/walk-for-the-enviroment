@@ -14,24 +14,18 @@ const InfoWrapper = styled.div`
    overflow: hidden;
    overflow-y: scroll;
    z-index: 1;
-   img { 
-      position: fixed;
-      width: 75%;
-   }
-   /* border: 2px solid red; */
 `;
 
 const ImageContainer = styled.div`
-   border: 1px solid red;
    display: flex;
-   align-items: center;
-   justify-content: center;
    position: fixed;
-   /* top: 10vh; */
-   max-width: 600px;
+   justify-content: center;
+   bottom: 10vh;
+   width: 100%;
    z-index: 1;
    img {
-      width: 60%;
+      width: 700px;
+      padding: 5rem;
    }
 `;
 
@@ -41,7 +35,6 @@ const Container = styled.section`
    width: 100%;
    height: 100%;
    z-index: 2;
-   /* border: 2px solid green; */
 `;
 
 const PageDisplay = styled.div`
@@ -52,8 +45,6 @@ const PageDisplay = styled.div`
    background-image: linear-gradient(to right, #ff1ab3, #c1298f, #882a6a, #542345, #251821);
    border-radius: 50px 0 0 50px;
    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
-   /* border: 2px solid magenta; */
-
    h2 {
       padding-left: 1rem;
       color: #FFF;
@@ -74,7 +65,7 @@ const StepContainer = styled.div`
    height: 120px;
    margin-top: 1.6rem;
    padding: 1.25rem;
-   background: rgba(129, 210, 239, 0.95);
+   background: rgba(129, 210, 239, 0.90);
    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
    border-radius: 30px;
 `;
@@ -83,7 +74,6 @@ const TopText = styled.div`
    background-color: transparent;
    display: flex;
    justify-content: space-between;
-
    span {
       background-color: transparent;
       color: #fff;
@@ -91,8 +81,8 @@ const TopText = styled.div`
       font-size: 1rem;
    }
 `;
+
 const MidText = styled.div`
-   /* border: 1px solid green; */
    margin-top: 5px;
    background-color: transparent;
    display: flex;
@@ -113,26 +103,25 @@ const MidText = styled.div`
       font-size: 1rem;
    }
 `;
+
 const WrapperResultButton = styled.div`
-   /* border: 1px solid yellow; */
    height: 100%;
    display: flex;
    align-items: flex-end;
 `;
 
 const ResultButtonContainer = styled.div`
-   /* border: 1px solid red; */
    margin: 0 auto;
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
    background: #3F3D56;
+   cursor: pointer;
    bottom: 10vh;
    border-radius: 110px 110px 0 0;
    width: 340px;
    height: 70px;
-
    span {
       color: #FFF;
       padding-bottom: .5rem;
@@ -148,7 +137,6 @@ const ArrowUpIcon = styled(IoIosArrowUp)`
    height: 2.9rem;
    /* border: 1px solid red; */
 `;
-
 
 const ResultPopupWrapper = styled.div`
    display: ${({ openResult }) => openResult ? 'flex' : 'none'};
@@ -171,11 +159,9 @@ const ResultPopupContainer = styled.div`
    display: flex;
    flex-direction: column;
    text-align: center;
-   
    background: #81D2EF;
    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.9);
    border-radius: 55px;
-
    h3 {
       color: #FFF;
       background-color: transparent;
@@ -200,20 +186,20 @@ const ResultPopupContainer = styled.div`
       text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
    }
 `;
+
 const CloseIconWrapper = styled.div`
    display: flex;
    justify-content: flex-end;
    margin-bottom: 2rem;
    width: 100%;
 `;
+
 const CloseIcon = styled(ImCross)`
    background: transparent;
    right: 25px;
    top: 25px;
    cursor: pointer;
 `;
-
-
 
 const Activity = () => {
 
@@ -236,15 +222,14 @@ const Activity = () => {
                      <CloseIcon onClick={handleCloseResult} />
                   </CloseIconWrapper>
                   <h3>Resultat</h3>
-                  <p>45 024 steg</p>
+                  <p>24 943 steg</p>
                   <span>Detta resulterar i
-                     45 poäng
+                     24 poäng
                      och </span>
-                  <p style={{ fontSize: '3.4rem', color: '#FF7BCA', }}>45 kr</p>
+                  <p style={{ fontSize: '3.4rem', color: '#FF7BCA', }}>24 kr</p>
                   <span>Att donera till din valda organisation</span>
                </ResultPopupContainer>
             </ResultPopupWrapper>
-
 
             <Container>
                <PageDisplay>
@@ -299,8 +284,8 @@ const Activity = () => {
                      <span>SAMLAT RESULTAT</span>
                   </ResultButtonContainer>
                </WrapperResultButton>
-
             </Container>
+
          </InfoWrapper>
       </>
    );

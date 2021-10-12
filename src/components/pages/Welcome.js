@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import Bg_img from '../assets/bg_darkmode.svg';
+import Leaf from '../assets/leaf.svg';
 
 const Test = styled.div`
    position: fixed;
@@ -13,7 +14,6 @@ const Test = styled.div`
    left: 0;
    width: 100%;
    height: 100%;
-   /* background: rgba(0, 0, 0, 0.4); */
 `;
 
 const Wrapper = styled.div`
@@ -23,17 +23,15 @@ const Wrapper = styled.div`
    flex-direction: column;
    align-self: center;
    align-items: center;
-   top: 0;
-   left: 0;
    max-width: 768px;
    height: 100vh;
    z-index: 200;
-   /* border: 2px solid red; */
 `;
 
 const Header = styled.div`
-   margin-top: 79px;
-   /* border: 1px solid red; */
+   display: flex;
+   flex-direction: column;
+   margin-top: 2vh;
    h1 {
       font-style: normal;
       font-weight: 200;
@@ -41,10 +39,17 @@ const Header = styled.div`
       line-height: 75px;
       color: #fff;
    }
+   img{
+      align-items: flex-end;
+      height: 80px;
+      width: 80px;
+      position: relative;
+      right: -265px;
+      bottom: -40px;
+   }
 `;
 
 const BgWrapper = styled.div`
-   /* border: 1px solid red; */
    display: flex;
    justify-content: center;
    align-items: center;
@@ -55,7 +60,6 @@ const BgWrapper = styled.div`
 `;
 
 const Button = styled(NavLink)`
-   /* border: 1px solid red; */
    display: flex;
    margin-top: 2rem;
    width: 240px;
@@ -64,32 +68,29 @@ const Button = styled(NavLink)`
    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.4);
    border-radius: 25px;
    text-decoration: none;
-
       span {
          color: #F8F3F6;
          margin: auto;
-         background-color: transparent;
          font-style: normal;
          font-weight: bold;
          font-size: 24px;
          line-height: 36px;
          letter-spacing: 0.06em;
-   }
+      }
 `;
-
-
 
 const Welcome = () => {
    return (
       <Test>
          <Wrapper>
             <Header>
+               <img src={Leaf} alt="leaf" />
                <h1>Gå för miljön</h1>
             </Header>
+
             <BgWrapper>
                <img src={Bg_img} alt='background_trees' />
             </BgWrapper>
-
 
             <Button to='/home'>
                <span>GÅ MED</span>

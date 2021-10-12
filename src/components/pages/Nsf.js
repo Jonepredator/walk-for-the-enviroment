@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import NsfLogo from '../assets/nsf-logo.svg';
 import { NavLink } from 'react-router-dom';
 
-
 const Container = styled.div`
    background-color: #251821;
    display: flex;
@@ -12,7 +11,6 @@ const Container = styled.div`
    height: 90vh;
    overflow: hidden;
    overflow-y: scroll;
-   /* border: 2px solid red; */
 `;
 
 const OrganisationBox = styled.div`
@@ -26,7 +24,6 @@ const OrganisationBox = styled.div`
    background: #F6F6F6;
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
    border-radius: 50px;
-
    img {
       width: 200px;
       background: transparent;
@@ -38,11 +35,9 @@ const OrganisationBox = styled.div`
 `;
 
 const TextWrapper = styled.div`
-   /* border: 1px solid green; */
    display: flex;
    flex-direction: column;
    width: 80%;
-
    h4 {
       margin: 1rem 0 .2rem 0;
       color: #FFF;
@@ -74,7 +69,6 @@ const Button = styled(NavLink)`
    border-radius: 50px;
    margin: 1.5rem 0 3rem 0;
    text-decoration: none;
-   
    p {
       background: transparent;
       color: #F8F3F6;
