@@ -23,7 +23,7 @@
 - [Resources](#🧰-resources)
 - [Preview](#👀-preview)
 - [License](#📄-license)
-- [Author Info](#😎-author-info)
+- [My Socials](#😎-my-socials)
 
 ---
 </br>
@@ -110,7 +110,7 @@ SOFTWARE.
 ---
 </br>
 
-## 😎 &nbsp; __Author Info__
+## 😎 &nbsp; __My Socials__
 
 - Instagram - [@jonepredator](https://instagram.com/jonepredator)
 - Portfolio Website - [Juan Fuenzalida](https://juanfuenzalida.netlify.app)
