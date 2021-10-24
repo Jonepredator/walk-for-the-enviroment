@@ -6,6 +6,50 @@ import WwfLogo from '../assets/wwf-logo.svg';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+const YourPoints = () => {
+   return (
+      <>
+         <InfoWrapper>
+            <Container>
+               <PageDisplay>
+                  <h2>Dina Poäng</h2>
+               </PageDisplay>
+
+               <MoneyPointsBox>
+                  <CoinsIcon />
+                  <p>24 p = 24 kr</p>
+               </MoneyPointsBox>
+
+               <OrganisationBox >
+                  <img src={GpLogo} alt='gp-logo' />
+               </OrganisationBox>
+               <Button to='/greenpeace'>
+                  <p>Välj</p>
+               </Button>
+
+               <OrganisationBox>
+                  <img src={NsfLogo} alt='nsf-logo' />
+               </OrganisationBox>
+               <Button to='/naturskyddsforeningen'>
+                  <p>Välj</p>
+               </Button>
+
+               <OrganisationBox>
+                  <img src={WwfLogo} alt='wwf-logo' style={{ width: 80, }} />
+                  <p>Världsnaturfonden </p>
+               </OrganisationBox>
+               <Button to='wwf'>
+                  <p>Välj</p>
+               </Button>
+
+            </Container>
+         </InfoWrapper>
+      </>
+   );
+};
+
+export default YourPoints;
+
 const InfoWrapper = styled.div`
    background-color: #251821;
    display: flex;
@@ -104,48 +148,3 @@ const Button = styled(NavLink)`
       letter-spacing: 0.06em;
    }
 `;
-
-
-const YourPoints = () => {
-   return (
-      <>
-         <InfoWrapper>
-            <Container>
-               <PageDisplay>
-                  <h2>Dina Poäng</h2>
-               </PageDisplay>
-
-               <MoneyPointsBox>
-                  <CoinsIcon />
-                  <p>24 p = 24 kr</p>
-               </MoneyPointsBox>
-
-               <OrganisationBox >
-                  <img src={GpLogo} alt='gp-logo' />
-               </OrganisationBox>
-               <Button to='/greenpeace'>
-                  <p>Välj</p>
-               </Button>
-
-               <OrganisationBox>
-                  <img src={NsfLogo} alt='nsf-logo' />
-               </OrganisationBox>
-               <Button to='/naturskyddsforeningen'>
-                  <p>Välj</p>
-               </Button>
-
-               <OrganisationBox>
-                  <img src={WwfLogo} alt='wwf-logo' style={{ width: 80, }} />
-                  <p>Världsnaturfonden </p>
-               </OrganisationBox>
-               <Button to='wwf'>
-                  <p>Välj</p>
-               </Button>
-
-            </Container>
-         </InfoWrapper>
-      </>
-   );
-};
-
-export default YourPoints;

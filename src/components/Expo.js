@@ -1,16 +1,5 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
-   display: flex;
-   padding-left: 1rem;
-   h2{
-      padding-right: .5rem;
-      color: #FFF;
-      font-weight: 500;
-      font-size: 2rem;
-   }
-`;
-
 const Expo = () => {
    const d = new Date();
    const weekday = ['Sön', 'Mån', 'Tis', 'Ons', 'Tors', 'Fre', 'Lör'];
@@ -30,3 +19,14 @@ const Expo = () => {
 };
 
 export default Expo;
+
+const Wrapper = styled.div`
+   display: flex;
+   padding-left: 1rem;
+   h2{
+      padding-right: .5rem;
+      color: #FFF;
+      font-weight: 500;
+      font-size: 2rem;
+   }
+`;

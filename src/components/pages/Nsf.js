@@ -3,6 +3,35 @@ import styled from 'styled-components';
 import NsfLogo from '../assets/nsf-logo.svg';
 import { NavLink } from 'react-router-dom';
 
+const Nsf = () => {
+   return (
+      <Container>
+         <OrganisationBox >
+            <img src={NsfLogo} alt='gp-logo' />
+         </OrganisationBox>
+         <TextWrapper>
+            <h4>Organisation</h4>
+            <p>Naturskyddsföreningen är Sveriges största miljöorganisation och sedan 1909 har vi varit med och räddat pilgrimsfalken, skapat naturreservat, bidragit till ekoboomen och påverkat viktiga politiska beslut, bland annat inom klimatområdet. <br />
+            </p>
+            <h4>Insamlingspolicy</h4>
+            <ul>
+               <p>Med din gåva bidrar du till arbetet för att: </p>
+               <li>skapa en tuffare klimatpolitik</li>
+               <li>fasa ut subventioner som gynnar fossil energi</li>
+               <li>visa vägen mot hållbara förnybara energisystem</li>
+               <li>minska utsläpp som vi svenskar orsakar i andra länder</li>
+               <li>granska exportkrediter, pensionsfonder och statliga bolag som ofta bidrar till den fossila ekonomin istället för att arbeta för fossilfrihet.</li>
+            </ul>
+         </TextWrapper>
+         <Button to='/thanku'>
+            <p>Donera</p>
+         </Button>
+      </Container>
+   );
+};
+
+export default Nsf;
+
 const Container = styled.div`
    background-color: #251821;
    display: flex;
@@ -76,33 +105,3 @@ const Button = styled(NavLink)`
       letter-spacing: 0.06em;
    }
 `;
-
-
-const Nsf = () => {
-   return (
-      <Container>
-         <OrganisationBox >
-            <img src={NsfLogo} alt='gp-logo' />
-         </OrganisationBox>
-         <TextWrapper>
-            <h4>Organisation</h4>
-            <p>Naturskyddsföreningen är Sveriges största miljöorganisation och sedan 1909 har vi varit med och räddat pilgrimsfalken, skapat naturreservat, bidragit till ekoboomen och påverkat viktiga politiska beslut, bland annat inom klimatområdet. <br />
-            </p>
-            <h4>Insamlingspolicy</h4>
-            <ul>
-               <p>Med din gåva bidrar du till arbetet för att: </p>
-               <li>skapa en tuffare klimatpolitik</li>
-               <li>fasa ut subventioner som gynnar fossil energi</li>
-               <li>visa vägen mot hållbara förnybara energisystem</li>
-               <li>minska utsläpp som vi svenskar orsakar i andra länder</li>
-               <li>granska exportkrediter, pensionsfonder och statliga bolag som ofta bidrar till den fossila ekonomin istället för att arbeta för fossilfrihet.</li>
-            </ul>
-         </TextWrapper>
-         <Button to='/thanku'>
-            <p>Donera</p>
-         </Button>
-      </Container>
-   );
-};
-
-export default Nsf;

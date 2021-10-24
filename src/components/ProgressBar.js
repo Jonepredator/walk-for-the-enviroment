@@ -1,6 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
+const ProgressBar = ({ width, percent }) => {
+
+   const [value, setValue] = useState(0);
+
+   useEffect(() => {
+      setValue(percent * width);
+   }, [width, percent]);
+
+   return (
+      <>
+         <ProgressSection>
+            <ProgressDiv style={{ width: width }}>
+               <Progress style={{ width: `${value}px` }} />
+            </ProgressDiv>
+         </ProgressSection>
+      </>
+   );
+};
+
+export default ProgressBar;
+
 const ProgressSection = styled.section`
    margin-top: 10px;
    background: transparent;
@@ -23,25 +44,3 @@ const Progress = styled.div`
    transition-delay: .6s;
    margin: 0;
 `;
-
-
-const ProgressBar = ({ width, percent }) => {
-
-   const [value, setValue] = useState(0);
-
-   useEffect(() => {
-      setValue(percent * width);
-   }, [width, percent]);
-
-   return (
-      <>
-         <ProgressSection>
-            <ProgressDiv style={{ width: width }}>
-               <Progress style={{ width: `${value}px` }} />
-            </ProgressDiv>
-         </ProgressSection>
-      </>
-   );
-};
-
-export default ProgressBar;

@@ -11,6 +11,117 @@ import SmallShoes from '../assets/small_shoes.svg';
 import CountUp from 'react-countup/';
 import Expo from '../Expo';
 
+const StepCounter = ({ day, date, month }) => {
+
+   const [openInfoBox, setOpenInfoBox] = useState(false);
+   const [openEmission, setOpenEmission] = useState(false);
+
+   const handleCloseInfo = () => {
+      setOpenInfoBox(!openInfoBox);
+   };
+
+   const handleCloseEmission = () => {
+      setOpenEmission(!openEmission);
+   };
+
+   return (
+      <>
+         <InfoWrapper>
+
+            <InfoPopupWrapper openInfoBox={openInfoBox}>
+               <InfoPopup>
+                  <CloseIconWrapper>
+                     <CloseInfoIcon onClick={handleCloseInfo} />
+                  </CloseIconWrapper>
+                  <h3>Hur fungerar<br />Gå För Miljön?</h3>
+                  <br />
+                  <span>Att välja att gå istället för många andra färdsätt så bevarar du naturen. Med denna app kan du hjälpa på flera sätt genom att även donera till organisationer utan att öppna plånboken alls.</span>
+                  <StepInfo>
+                     <StepIcon />
+                     <span>För varje 1000 steg du tar ger dig 1 poäng som motsvarar 1 krona.  Max 20 000 steg per dag.</span>
+                  </StepInfo>
+                  <DonationInfo>
+                     <DonationIcon />
+                     <span>Du kan donera till tre olika  organstioner som främjar klimatet.
+                     </span>
+                  </DonationInfo>
+               </InfoPopup>
+            </InfoPopupWrapper>
+
+            <EmissionPopupWrapper openEmission={openEmission} >
+               <EmissionPopup>
+                  <CloseIconWrapper>
+                     <CloseInfoIcon onClick={handleCloseEmission} />
+                  </CloseIconWrapper>
+                  <h3>Vad du har gjort för<br />miljön idag?</h3>
+                  <span>För att du har valt att gå istället för att ta bilen så har du minskat dina
+                     utsläpp med:</span>
+                  <p>1000 g CO2</p>
+                  <span>vilket har resulterat i att du räddat </span>
+                  <p>0.003 kvm</p>
+                  <span>is ifrån att smälta.</span>
+               </EmissionPopup>
+            </EmissionPopupWrapper>
+
+            <Container>
+               <InfoIconWrapper >
+                  <InfoPopupIcon openInfoBox={openInfoBox} onClick={() => setOpenInfoBox(!openInfoBox)} />
+               </InfoIconWrapper>
+
+               <PageDisplay>
+                  <Expo />
+                  <h2>{day}</h2>
+                  <h2>{date}</h2>
+                  <h2>{month}</h2>
+               </PageDisplay>
+
+               <StepCounterWrapper>
+                  <StepCounterBox>
+                     <RingOuter>
+                        <img src={SmallShoes} alt='small-shoes' />
+
+                        <CountUp
+                           end={8354}
+                           duration={5.5}
+                           delay={.6}
+                        />
+                        <p>STEG</p>
+                     </RingOuter>
+                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="250px" height="250px">
+                        <defs>
+                           <linearGradient id="GradientColor" gradientTransform="rotate(45)">
+                              <stop offset="50%" stopColor="#FF1AB3" />
+                              <stop offset="100%" stopColor="#83C4FF" />
+                           </linearGradient>
+                        </defs>
+                        <circle cx="125" cy="125" r="116.5" strokeLinecap="round" />
+                     </svg>
+                  </StepCounterBox>
+               </StepCounterWrapper>
+
+               <ButtonWrapper>
+                  <PointsButton to='/activity' activeClassName='active'>
+                     <PointsIcon />
+                     <CountUp
+                        end={8}
+                        duration={3.1}
+                        delay={.6}
+                     />
+                     <p>Poäng</p>
+                  </PointsButton>
+                  <InfoButton openEmission={openEmission} onClick={() => setOpenEmission(!openEmission)} >
+                     <InfoIcon />
+                     <span>Dina minskade<br />utsläpp</span>
+                  </InfoButton>
+               </ButtonWrapper>
+            </Container>
+         </InfoWrapper>
+      </>
+   );
+};
+
+export default StepCounter;
+
 const InfoWrapper = styled.div`
    background-color: #251821;
    display: flex;
@@ -317,114 +428,3 @@ const EmissionPopup = styled.div`
       font-size: 1.5rem;
    }
 `;
-
-const StepCounter = ({ day, date, month }) => {
-
-   const [openInfoBox, setOpenInfoBox] = useState(false);
-   const [openEmission, setOpenEmission] = useState(false);
-
-   const handleCloseInfo = () => {
-      setOpenInfoBox(!openInfoBox);
-   };
-
-   const handleCloseEmission = () => {
-      setOpenEmission(!openEmission);
-   };
-
-   return (
-      <>
-         <InfoWrapper>
-
-            <InfoPopupWrapper openInfoBox={openInfoBox}>
-               <InfoPopup>
-                  <CloseIconWrapper>
-                     <CloseInfoIcon onClick={handleCloseInfo} />
-                  </CloseIconWrapper>
-                  <h3>Hur fungerar<br />Gå För Miljön?</h3>
-                  <br />
-                  <span>Att välja att gå istället för många andra färdsätt så bevarar du naturen. Med denna app kan du hjälpa på flera sätt genom att även donera till organisationer utan att öppna plånboken alls.</span>
-                  <StepInfo>
-                     <StepIcon />
-                     <span>För varje 1000 steg du tar ger dig 1 poäng som motsvarar 1 krona.  Max 20 000 steg per dag.</span>
-                  </StepInfo>
-                  <DonationInfo>
-                     <DonationIcon />
-                     <span>Du kan donera till tre olika  organstioner som främjar klimatet.
-                     </span>
-                  </DonationInfo>
-               </InfoPopup>
-            </InfoPopupWrapper>
-
-            <EmissionPopupWrapper openEmission={openEmission} >
-               <EmissionPopup>
-                  <CloseIconWrapper>
-                     <CloseInfoIcon onClick={handleCloseEmission} />
-                  </CloseIconWrapper>
-                  <h3>Vad du har gjort för<br />miljön idag?</h3>
-                  <span>För att du har valt att gå istället för att ta bilen så har du minskat dina
-                     utsläpp med:</span>
-                  <p>1000 g CO2</p>
-                  <span>vilket har resulterat i att du räddat </span>
-                  <p>0.003 kvm</p>
-                  <span>is ifrån att smälta.</span>
-               </EmissionPopup>
-            </EmissionPopupWrapper>
-
-            <Container>
-               <InfoIconWrapper >
-                  <InfoPopupIcon openInfoBox={openInfoBox} onClick={() => setOpenInfoBox(!openInfoBox)} />
-               </InfoIconWrapper>
-
-               <PageDisplay>
-                  <Expo />
-                  <h2>{day}</h2>
-                  <h2>{date}</h2>
-                  <h2>{month}</h2>
-               </PageDisplay>
-
-               <StepCounterWrapper>
-                  <StepCounterBox>
-                     <RingOuter>
-                        <img src={SmallShoes} alt='small-shoes' />
-
-                        <CountUp
-                           end={8354}
-                           duration={5.5}
-                           delay={.6}
-                        />
-                        <p>STEG</p>
-                     </RingOuter>
-                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="250px" height="250px">
-                        <defs>
-                           <linearGradient id="GradientColor" gradientTransform="rotate(45)">
-                              <stop offset="50%" stopColor="#FF1AB3" />
-                              <stop offset="100%" stopColor="#83C4FF" />
-                           </linearGradient>
-                        </defs>
-                        <circle cx="125" cy="125" r="116.5" strokeLinecap="round" />
-                     </svg>
-                  </StepCounterBox>
-               </StepCounterWrapper>
-
-               <ButtonWrapper>
-                  <PointsButton to='/activity' activeClassName='active'>
-                     <PointsIcon />
-                     <CountUp
-                        end={8}
-                        duration={3.1}
-                        delay={.6}
-                     />
-                     <p>Poäng</p>
-                  </PointsButton>
-                  <InfoButton openEmission={openEmission} onClick={() => setOpenEmission(!openEmission)} >
-                     <InfoIcon />
-                     <span>Dina minskade<br />utsläpp</span>
-                  </InfoButton>
-               </ButtonWrapper>
-            </Container>
-         </InfoWrapper>
-      </>
-   );
-};
-
-export default StepCounter;

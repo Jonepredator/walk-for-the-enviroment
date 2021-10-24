@@ -4,6 +4,30 @@ import { NavLink } from 'react-router-dom';
 import Bg_img from '../assets/bg_darkmode.svg';
 import Leaf from '../assets/leaf.svg';
 
+const Welcome = () => {
+   return (
+      <Test>
+         <Wrapper>
+            <Header>
+               <img src={Leaf} alt="leaf" />
+               <h1>Gå för miljön</h1>
+            </Header>
+
+            <BgWrapper>
+               <img src={Bg_img} alt='background_trees' />
+            </BgWrapper>
+
+            <Button to='/home'>
+               <span>GÅ MED</span>
+            </Button>
+
+         </Wrapper>
+      </Test>
+   );
+};
+
+export default Welcome;
+
 const Test = styled.div`
    position: fixed;
    justify-content: center;
@@ -78,27 +102,3 @@ const Button = styled(NavLink)`
          letter-spacing: 0.06em;
       }
 `;
-
-const Welcome = () => {
-   return (
-      <Test>
-         <Wrapper>
-            <Header>
-               <img src={Leaf} alt="leaf" />
-               <h1>Gå för miljön</h1>
-            </Header>
-
-            <BgWrapper>
-               <img src={Bg_img} alt='background_trees' />
-            </BgWrapper>
-
-            <Button to='/home'>
-               <span>GÅ MED</span>
-            </Button>
-
-         </Wrapper>
-      </Test>
-   );
-};
-
-export default Welcome;

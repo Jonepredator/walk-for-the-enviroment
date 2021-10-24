@@ -5,6 +5,100 @@ import Bg_img from '../assets/vectorfeet.svg';
 import { IoIosArrowUp } from 'react-icons/io';
 import { ImCross } from 'react-icons/im';
 
+
+const Activity = () => {
+
+   const [openResult, setOpenResult] = useState(false);
+   const handleCloseResult = () => {
+      setOpenResult(!openResult);
+   };
+
+   return (
+      <>
+         <InfoWrapper>
+
+            <ImageContainer>
+               <img src={Bg_img} alt='feet' />
+            </ImageContainer>
+
+            <ResultPopupWrapper openResult={openResult} >
+               <ResultPopupContainer>
+                  <CloseIconWrapper>
+                     <CloseIcon onClick={handleCloseResult} />
+                  </CloseIconWrapper>
+                  <h3>Resultat</h3>
+                  <p>24 943 steg</p>
+                  <span>Detta resulterar i
+                     24 poäng
+                     och </span>
+                  <p style={{ fontSize: '3.4rem', color: '#FF7BCA', }}>24 kr</p>
+                  <span>Att donera till din valda organisation</span>
+               </ResultPopupContainer>
+            </ResultPopupWrapper>
+
+            <Container>
+               <PageDisplay>
+                  <h2>Din Aktivitet</h2>
+               </PageDisplay>
+
+               <BoxContainer>
+                  <StepContainer>
+                     <TopText>
+                        <span>Idag</span>
+                        <span>8 poäng</span>
+                     </TopText>
+                     <MidText>
+                        <h2>8354</h2>
+                        <span>steg</span>
+                     </MidText>
+                     <ProgressBar width={300} percent={0.8354} />
+                  </StepContainer>
+               </BoxContainer>
+
+               <BoxContainer>
+                  <StepContainer>
+                     <TopText>
+                        <span>Igår</span>
+                        <span>6 poäng</span>
+                     </TopText>
+                     <MidText>
+                        <h2>6589</h2>
+                        <span>steg</span>
+                     </MidText>
+                     <ProgressBar width={300} percent={0.6589} />
+                  </StepContainer>
+               </BoxContainer>
+
+               <BoxContainer>
+                  <StepContainer>
+                     <TopText>
+                        <span>3 Sep</span>
+                        <span>10 poäng</span>
+                     </TopText>
+                     <MidText>
+                        <h2>10000</h2>
+                        <span>steg</span>
+                     </MidText>
+                     <ProgressBar width={300} percent={1} />
+                  </StepContainer>
+               </BoxContainer>
+
+               <WrapperResultButton>
+                  <ResultButtonContainer openResult={openResult} onClick={() => setOpenResult(!openResult)}>
+                     <ArrowUpIcon />
+                     <span>SAMLAT RESULTAT</span>
+                  </ResultButtonContainer>
+               </WrapperResultButton>
+            </Container>
+
+         </InfoWrapper>
+      </>
+   );
+};
+
+export default Activity;
+
+
 const InfoWrapper = styled.div`
    background-color: #251821;
    display: flex;
@@ -200,95 +294,3 @@ const CloseIcon = styled(ImCross)`
    top: 25px;
    cursor: pointer;
 `;
-
-const Activity = () => {
-
-   const [openResult, setOpenResult] = useState(false);
-   const handleCloseResult = () => {
-      setOpenResult(!openResult);
-   };
-
-   return (
-      <>
-         <InfoWrapper>
-
-            <ImageContainer>
-               <img src={Bg_img} alt='feet' />
-            </ImageContainer>
-
-            <ResultPopupWrapper openResult={openResult} >
-               <ResultPopupContainer>
-                  <CloseIconWrapper>
-                     <CloseIcon onClick={handleCloseResult} />
-                  </CloseIconWrapper>
-                  <h3>Resultat</h3>
-                  <p>24 943 steg</p>
-                  <span>Detta resulterar i
-                     24 poäng
-                     och </span>
-                  <p style={{ fontSize: '3.4rem', color: '#FF7BCA', }}>24 kr</p>
-                  <span>Att donera till din valda organisation</span>
-               </ResultPopupContainer>
-            </ResultPopupWrapper>
-
-            <Container>
-               <PageDisplay>
-                  <h2>Din Aktivitet</h2>
-               </PageDisplay>
-
-               <BoxContainer>
-                  <StepContainer>
-                     <TopText>
-                        <span>Idag</span>
-                        <span>8 poäng</span>
-                     </TopText>
-                     <MidText>
-                        <h2>8354</h2>
-                        <span>steg</span>
-                     </MidText>
-                     <ProgressBar width={300} percent={0.8354} />
-                  </StepContainer>
-               </BoxContainer>
-
-               <BoxContainer>
-                  <StepContainer>
-                     <TopText>
-                        <span>Igår</span>
-                        <span>6 poäng</span>
-                     </TopText>
-                     <MidText>
-                        <h2>6589</h2>
-                        <span>steg</span>
-                     </MidText>
-                     <ProgressBar width={300} percent={0.6589} />
-                  </StepContainer>
-               </BoxContainer>
-
-               <BoxContainer>
-                  <StepContainer>
-                     <TopText>
-                        <span>3 Sep</span>
-                        <span>10 poäng</span>
-                     </TopText>
-                     <MidText>
-                        <h2>10000</h2>
-                        <span>steg</span>
-                     </MidText>
-                     <ProgressBar width={300} percent={1} />
-                  </StepContainer>
-               </BoxContainer>
-
-               <WrapperResultButton>
-                  <ResultButtonContainer openResult={openResult} onClick={() => setOpenResult(!openResult)}>
-                     <ArrowUpIcon />
-                     <span>SAMLAT RESULTAT</span>
-                  </ResultButtonContainer>
-               </WrapperResultButton>
-            </Container>
-
-         </InfoWrapper>
-      </>
-   );
-};
-
-export default Activity;

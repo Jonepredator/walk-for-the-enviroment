@@ -3,6 +3,27 @@ import styled from 'styled-components';
 import GpLogo from '../assets/gp-logo.svg';
 import { NavLink } from 'react-router-dom';
 
+const Greenpeace = () => {
+   return (
+      <Container>
+         <OrganisationBox >
+            <img src={GpLogo} alt='gp-logo' />
+         </OrganisationBox>
+         <TextWrapper>
+            <h4>Organisation</h4>
+            <p>Greenpeace Norden upprättades 1999 genom en sammanslutning av de nationella Greenpeace-kontoren i Danmark, Sverige, Finland och Norge. Kontoren gick samman för att öka slagkraften och effektiviteten genom ett bättre nordiskt samarbete.</p>
+            <h4>Insamlingspolicy</h4>
+            <p>Det är privatpersoner som du som möjliggör vårt arbete för en grönare planet. Vi tar inte emot bidrag från varken stater eller företag, vilket ger oss en oberoende röst som endast talar för miljöns intressen.</p>
+         </TextWrapper>
+         <Button to='/thanku'>
+            <p>Donera</p>
+         </Button>
+      </Container>
+   );
+};
+
+export default Greenpeace;
+
 const Container = styled.div`
    background-color: #251821;
    display: flex;
@@ -67,24 +88,3 @@ const Button = styled(NavLink)`
       letter-spacing: 0.06em;
    }
 `;
-
-const Greenpeace = () => {
-   return (
-      <Container>
-         <OrganisationBox >
-            <img src={GpLogo} alt='gp-logo' />
-         </OrganisationBox>
-         <TextWrapper>
-            <h4>Organisation</h4>
-            <p>Greenpeace Norden upprättades 1999 genom en sammanslutning av de nationella Greenpeace-kontoren i Danmark, Sverige, Finland och Norge. Kontoren gick samman för att öka slagkraften och effektiviteten genom ett bättre nordiskt samarbete.</p>
-            <h4>Insamlingspolicy</h4>
-            <p>Det är privatpersoner som du som möjliggör vårt arbete för en grönare planet. Vi tar inte emot bidrag från varken stater eller företag, vilket ger oss en oberoende röst som endast talar för miljöns intressen.</p>
-         </TextWrapper>
-         <Button to='/thanku'>
-            <p>Donera</p>
-         </Button>
-      </Container>
-   );
-};
-
-export default Greenpeace;

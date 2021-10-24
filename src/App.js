@@ -11,13 +11,11 @@ import ThankU from './components/pages/ThankU';
 import Nsf from './components/pages/Nsf';
 import Wwf from './components/pages/Wwf';
 
-
 function App() {
    return (
       <>
          <GlobalStyle />
          <Router>
-
             <Switch>
                <Route path='/' exact component={Welcome} />
                <Route path='/home' exact component={StepCounter} />

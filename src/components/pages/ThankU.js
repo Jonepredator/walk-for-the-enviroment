@@ -5,6 +5,37 @@ import Bg_img from '../assets/bg_darkmode.svg';
 import styled from 'styled-components';
 import Leaf from '../assets/leaf.svg';
 
+const ThankU = () => {
+   return (
+      <Wrapper>
+         <Header>
+            <img src={Leaf} alt="leaf" />
+            <h1>Gå för miljön</h1>
+         </Header>
+
+         <InfoDisplay>
+            <h2>Tack!</h2>
+            <span>Alla hjältar bär inte<br />mantel.</span>
+            <DonationSection>
+               <DonationIcon />
+               <p>: 24kr</p>
+            </DonationSection>
+            <EmissionSection>
+               <EmissionIcon />
+               <p>: -4kg CO2</p>
+            </EmissionSection>
+         </InfoDisplay>
+
+         <BgWrapper>
+            <img src={Bg_img} alt='background_trees' />
+         </BgWrapper>
+
+      </Wrapper>
+   );
+};
+
+export default ThankU;
+
 const Wrapper = styled.div`
    background-color: #251821;
    display: flex;
@@ -112,36 +143,3 @@ const BgWrapper = styled.div`
       z-index: 1;
    }
 `;
-
-
-
-const ThankU = () => {
-   return (
-      <Wrapper>
-         <Header>
-            <img src={Leaf} alt="leaf" />
-            <h1>Gå för miljön</h1>
-         </Header>
-
-         <InfoDisplay>
-            <h2>Tack!</h2>
-            <span>Alla hjältar bär inte<br />mantel.</span>
-            <DonationSection>
-               <DonationIcon />
-               <p>: 24kr</p>
-            </DonationSection>
-            <EmissionSection>
-               <EmissionIcon />
-               <p>: -4kg CO2</p>
-            </EmissionSection>
-         </InfoDisplay>
-
-         <BgWrapper>
-            <img src={Bg_img} alt='background_trees' />
-         </BgWrapper>
-
-      </Wrapper>
-   );
-};
-
-export default ThankU;

@@ -3,6 +3,28 @@ import styled from 'styled-components';
 import WwfLogo from '../assets/wwf-logo.svg';
 import { NavLink } from 'react-router-dom';
 
+const Wwf = () => {
+   return (
+      <Container>
+         <OrganisationBox >
+            <img src={WwfLogo} alt='wwf-logo' style={{ width: 75, }} />
+            <p>Världsnaturfonden </p>
+         </OrganisationBox>
+         <TextWrapper>
+            <h4>Organisation</h4>
+            <p>WWF arbetar för en framtid där människan lever i harmoni med naturen. Vi kämpar för att skydda de mest hotade och unika arterna och livsmiljöerna på planeten och för att mänskligheten ska fördela jordens resurser rättvist och använda dem på ett hållbart sätt.</p>
+            <h4>Gåva</h4>
+            <p>Bara med ditt stöd kan vi fortsätta genomföra projekt som bevarar en levande planet och hotade arter som tigrar, pandor och gorillor. Du bidrar också till ett ansvarsfullt och hållbart fiske, skogsbruk och jordbruk för att ta hand om de ekosystem där både växter, djur och människor ingår. </p>
+         </TextWrapper>
+         <Button to='/thanku'>
+            <p>Donera</p>
+         </Button>
+      </Container>
+   );
+};
+
+export default Wwf;
+
 const Container = styled.div`
    background-color: #251821;
    display: flex;
@@ -67,26 +89,3 @@ const Button = styled(NavLink)`
       letter-spacing: 0.06em;
    }
 `;
-
-
-const Wwf = () => {
-   return (
-      <Container>
-         <OrganisationBox >
-            <img src={WwfLogo} alt='wwf-logo' style={{ width: 75, }} />
-            <p>Världsnaturfonden </p>
-         </OrganisationBox>
-         <TextWrapper>
-            <h4>Organisation</h4>
-            <p>WWF arbetar för en framtid där människan lever i harmoni med naturen. Vi kämpar för att skydda de mest hotade och unika arterna och livsmiljöerna på planeten och för att mänskligheten ska fördela jordens resurser rättvist och använda dem på ett hållbart sätt.</p>
-            <h4>Gåva</h4>
-            <p>Bara med ditt stöd kan vi fortsätta genomföra projekt som bevarar en levande planet och hotade arter som tigrar, pandor och gorillor. Du bidrar också till ett ansvarsfullt och hållbart fiske, skogsbruk och jordbruk för att ta hand om de ekosystem där både växter, djur och människor ingår. </p>
-         </TextWrapper>
-         <Button to='/thanku'>
-            <p>Donera</p>
-         </Button>
-      </Container>
-   );
-};
-
-export default Wwf;
