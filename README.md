@@ -38,6 +38,10 @@ My UI was made specifically for larger newer smart phones (iphone 12 pro).
 
 It was made with the intent of creating a way for people to make the choise of walking instead of taking the car to nearby places. This way yhe users steps was going to be count and that way they get points that transform to money that they can use to donate to one of three organisations that work for creating a better enviroment.
 
+Below a link to the Figma design.
+- [Figma](https://www.figma.com/file/EyrKDRV023TsbCvvOMdlIW/g%C3%A5-f%C3%B6r-milj%C3%B6n?node-id=0%3A1)
+
+
 
 </br>
 
@@ -55,6 +59,7 @@ It was made with the intent of creating a way for people to make the choise of w
 - [react-countup](https://www.npmjs.com/package/react-countup)
 - [styled-components](https://styled-components.com/)
 - [react-router-dom](https://reactrouter.com/web/guides/quick-start)
+- [Figma](https://figma.com)
 
 </br>
 
